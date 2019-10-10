@@ -1,14 +1,10 @@
 import React from "react";
-import { Button } from "@storybook/react/demo";
+import { COLORS } from "../src/styles/theme/colors";
 
-export default { title: "Button" };
+export default { title: "Tokens" };
 
-export const withText = () => <Button>Hello Button</Button>;
-
-export const withEmoji = () => (
-	<Button>
-		<span role="img" aria-label="so cool">
-			😀 😎 👍 💯
-		</span>
-	</Button>
+export const Colors = () => (
+  <div>
+    <div style={{ color: COLORS.black }}>Black</div>
+  </div>
 );
