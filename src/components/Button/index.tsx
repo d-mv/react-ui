@@ -1,16 +1,19 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
-import { PropTypes } from "@material-ui/core";
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import { PropTypes } from '@material-ui/core';
 
 export interface ButtonProps {
-  children: any;
-  color: PropTypes.Color;
+  title: string;
   disabled?: boolean;
+  secondary?: boolean;
   // can send back it's child, class or id
   onClick: (arg0?: JSX.Element | string) => void;
 }
 
-export default function({ children, color, disabled, onClick }: ButtonProps) {
+export default function({ title, secondary, disabled, onClick }: ButtonProps) {
+  let color: PropTypes.Color = 'primary';
+  if (secondary) color = 'secondary';
+
   return (
     <Button
       data-testid={`button__${color}`}
@@ -18,7 +21,8 @@ export default function({ children, color, disabled, onClick }: ButtonProps) {
       disabled={disabled}
       color={color}
       onClick={() => onClick()}>
-      {children}
+      {title}
     </Button>
   );
 }
+
