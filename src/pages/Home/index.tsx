@@ -11,9 +11,7 @@ interface HomeProps {
   setAuthed: (arg0: boolean) => void;
 }
 
-const Home = ({ user, setAuthed }: HomeProps): JSX.Element => {
-  console.log(user);
-
+const Home = ({ user, setAuthed }: HomeProps) => {
   const toggleUser = () => setAuthed(true);
 
   return (
